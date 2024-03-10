@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% block title %} Задача №6 {% endblock title %} 
+
+{% block content %}
+
+<h1>Задача №6</h1>
+<p>
+    Создать страницу, на которой будет форма для ввода имени
+    и возраста пользователя и кнопка "Отправить"
+    При нажатии на кнопку будет произведена проверка
+    возраста и переход на страницу с результатом или на
+    страницу с ошибкой в случае некорректного возраста.
+</p>
+<div>
+  <form action="/task_06_check_age" method="post">
+    <input type="text" name="name_user" placeholder="Введите ваше имя">
+    <input type="number" name="age" placeholder="Введите ваш возраст">
+    <input type="submit" value="Отправить">
+  </form>
+</div>
+<a href="/">На главную</a>
+{% endblock content %}

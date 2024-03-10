@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Математические операции {% endblock title %}
+
+{% block content %}
+<h1>Задача №7</h1>
+<p>Создать страницу, на которой будет форма для ввода числа
+    и кнопка "Отправить"
+    При нажатии на кнопку будет произведено
+    перенаправление на страницу с результатом, где будет
+    выведено введенное число и его квадрат
+</p>
+<div class="container">
+    <form action="/task_07_square" method="post">   
+        <input type="number" name="number" placeholder="Введите число">
+        <input type="submit" value="Результат операции">
+    </form>
+</div>
+<a href="/">На главную</a>
+{% endblock content %}

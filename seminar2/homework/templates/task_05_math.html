@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Математические операции {% endblock title %}
+
+{% block content %}
+<h1>Задача №5</h1>
+<p>Создать страницу, на которой будет форма для ввода двух
+чисел и выбор операции (сложение, вычитание, умножение
+или деление) и кнопка "Вычислить"
+При нажатии на кнопку будет произведено вычисление
+результата выбранной операции и переход на страницу с
+результатом.
+</p>
+<div class="container">
+    <form action="/task_05_math" method="post">   
+        <input type="number" name="number_1" placeholder="Первое число">
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="number_2" placeholder="Второе число">
+        <input type="submit" value="Результат операции">
+    </form>
+</div>
+<a href="/">На главную</a>
+{% endblock content %}

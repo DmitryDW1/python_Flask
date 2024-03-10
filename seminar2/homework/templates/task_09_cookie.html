@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Задача №9{% endblock title %}
+{% block content %}
+<p>
+    Создать страницу, на которой будет форма для ввода имени и электронной почты, при отправке которой будет создан
+cookie-файл с данными пользователя, а также будет произведено перенаправление на страницу приветствия,
+где будет отображаться имя пользователя. На странице приветствия должна быть кнопка «Выйти», при нажатии на которую
+будет удалён cookie-файл с данными пользователя и произведено перенаправление на страницу ввода имени и электронной почты.
+
+</p>
+<div class="container">
+    <form action="/task_09_cookie" method="post">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <input type="text" name="name" placeholder="Имя">
+        <input type="text" name="e-mail" placeholder="E-mail">
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+<a href="/">На главную</a>
+{% endblock %}
