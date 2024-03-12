@@ -31,7 +31,7 @@ def fill_db():
     for student in range(1, count + 1):
         new_student = Student(
                                 name=f'student{student}', last_name=f'last_name{student}',
-                                age=choice([student, student * 5]), gender=choice(['male', 'female']), group=f'group{student}', faculty_id=randint(1, 10)
+                                age=choice([student, student * 5]), gender=choice([Gender.male, Gender.female]), group=f'group{student}', faculty_id=randint(1, 10)
                             )
         db.session.add(new_student)
     db.session.commit()

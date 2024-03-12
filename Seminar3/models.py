@@ -15,7 +15,7 @@ class Faculty(db.Model):
     student = db.relationship('Student', backref=db.backref(f'faculty'), lazy=True)
    
     def __repr__(self):
-        return f'Fag({self.fag_name})'
+        return f'Faculty({self.faculty_name})'
 
 class Student(db.Model):
     id_ = db.Column(db.Integer, primary_key=True)
