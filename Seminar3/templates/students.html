@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Вот наши студенты</h1>
+    <img src="../static/image/logo.png" alt="logo">
+    <div class="row">
+        {% for st in student%}
+            <p class="col-12 col-md-6">
+                Имя студента: {{ st.name }}, 
+                Фамилия: {{ st.last_name }}<br>
+                Возраст: {{ st.age }}<br>
+                Пол: {{ st.gender }}<br>
+                Группа: {{ st.group }}<br>
+                ID Факультета: {{ st.faculty.faculty_name }}<br>
+            </p>
+        {% endfor %}
+    </div>
+</body>
+</html>
