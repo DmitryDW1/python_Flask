@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+    <img src="/static/image/logo.png" alt="Моё фото">
+        <div class="row">
+            
+            {% for user in users %}
+                <p class="col-12 col-md-6">
+                    Имя пользователя: {{ user.username }}<br>
+                    E-mail пользователя: {{ user.email }}
+                </p>
+            {% endfor %}
+        </div>
+{% endblock %}

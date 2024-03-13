@@ -1,15 +1,25 @@
 import email
-from flask import Flask
+from flask import Flask, render_template
 from models_05 import db, User, Post, Comment
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../instance/mydatabase.db'
 db.init_app(app)
 
 
 @app.route('/')
 def index():
     return 'Привет!!!'
+
+@app.route('/data/')
+def data():
+    return 'Data'
+
+@app.route('/users/')
+def all_users():
+    users = User.query.all()
+    context = {'users': users}
+    return render_template('users.html', **context)
 
 @app.cli.command('initdb')
 def initdb_command():
