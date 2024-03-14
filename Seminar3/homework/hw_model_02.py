@@ -25,5 +25,8 @@ class Book(db.Model):
     number_of_copies = db.Column(db.Integer, nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey('author.id_'), nullable=False)
    
+
+    
+
     def __repr__(self):
         return f'Book({self.book_name})'

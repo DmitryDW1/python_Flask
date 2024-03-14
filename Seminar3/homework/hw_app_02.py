@@ -10,7 +10,7 @@
 
 
 from flask import Flask, render_template
-from hw_models import db, Book, Author
+from Seminar3.homework.hw_model_02 import db, Book, Author
 from random import randint
 
 app = Flask(__name__)
