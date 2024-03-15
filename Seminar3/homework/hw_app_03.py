@@ -18,17 +18,21 @@
 
 
 from flask import Flask, render_template
-from hw_models_03 import Evaluation
-from hw_models_03 import Gender, db, Student, Faculty
+from hw_model_03 import Gender, db, Student, Faculty, Evaluation
 from random import choice, randint
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase_2.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase_hw_app_03.db'
 db.init_app(app)
 
 COUNT = 10
 
 @app.route('/')
+def index():
+    return render_template('hw_task_03.html')
+
+
+@app.route('/students/')
 def students():
     students = db.session.query(Student).all()
     student_evaluations = db.session.query(Evaluation).all()

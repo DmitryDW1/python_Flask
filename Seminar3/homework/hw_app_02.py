@@ -8,19 +8,23 @@
 # Написать функцию-обработчик, которая будет выводить список всех книг с
 # указанием их авторов.
 
+# Для заполнения таблиц порядок команд:
+# 1) initdb
+# 2) fill-authors
+# 3) fill-books
 
 from flask import Flask, render_template
-from Seminar3.homework.hw_model_02 import db, Book, Author
+from hw_model_02 import db, Book, Author
 from random import randint
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase_hw_app_02.db'
 db.init_app(app)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('hw_task_02.html')
 
 @app.route('/books')
 def students():
