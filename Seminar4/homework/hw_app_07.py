@@ -17,7 +17,7 @@ import time
 
 arr = [randint(1, 100) for _ in range(1_000_000)]
 sum_arr = 0
-summa = multiprocessing.Value('i', 0)
+sum_mult = multiprocessing.Value('i', 0)
 processes = []
 num_operations = int(len(arr) // 1000)
 
@@ -61,12 +61,13 @@ def multy_summ():
     for i in range(num_operations):
         start_idx = i * len(arr) // num_operations
         end_idx = (i + 1) * len(arr) // num_operations
-        process = multiprocessing.Process(target=sum_array_mult, args=(arr, start_idx, end_idx, summa))
+        process = multiprocessing.Process(target=sum_array_mult, args=(arr, start_idx, end_idx, sum_mult))
         processes.append(process)
         process.start()
     for process in processes:
         process.join()
-    print(f"Функция {multy_summ.__name__} выполнилась за {time.time() - start_time:.2f} секунд с результатом {summa.value}")
+    print(f"Функция {multy_summ.__name__} выполнилась за {time.time() - start_time:.2f} секунд с результатом {sum_mult.value}")
+
 
 '''
 Асинхронный метод
