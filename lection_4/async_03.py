@@ -15,7 +15,6 @@ async def process_file(file_path):
         
         
 async def main():
-    # dir_path = Path('/path/to/Directory')
     dir_path = Path('.')
     file_paths = [file_path for file_path in dir_path.iterdir() if file_path.is_file()]
     tasks = [asyncio.create_task(process_file(file_path)) for file_path in file_paths]

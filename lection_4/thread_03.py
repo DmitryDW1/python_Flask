@@ -12,7 +12,7 @@ def increment():
     for _ in range(1_000_000):
         counter += 1
     print(f'Значение счётчика: {counter:_}')
-    
+
 
 threads = []
 for i in range(5):
