@@ -15,11 +15,11 @@ from random import randint
 from threading import Thread
 import time
 
-arr = [randint(1, 100) for _ in range(1_000_000)]
+arr = [randint(1, 100) for _ in range(1_000)]
 sum_arr = 0
 sum_mult = multiprocessing.Value('i', 0)
 processes = []
-num_operations = int(len(arr) // 1000)
+num_operations = 8
 
 '''
 Многопоточный метод
