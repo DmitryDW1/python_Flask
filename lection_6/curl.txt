@@ -1,0 +1,7 @@
+POST запрос:
+curl -X 'POST' 'http://127.0.0.1:8000/users/'
+-H 'accept:application/json'
+-H 'Content-Type:application/json'
+-d '{"name": "Masha","email": "my_mail@fff.com"}'
+
+curl -X 'POST' 'http://127.0.0.1:8000/users/' -H 'accept: application/json' -H 'Content-Type: application/json' -d '{"name": "Masha","email": "my_mail@fff.com"}'
