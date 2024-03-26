@@ -11,7 +11,6 @@
 # Для каждой конечной точки необходимо проводить валидацию данных запроса и
 # ответа. Для этого использовать библиотеку Pydantic.
 
-import random
 from typing import List
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel

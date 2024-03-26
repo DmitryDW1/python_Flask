@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": [
+    "./Seminar6/homework/app_06/models",
+    "./Seminar6/homework/hw_app_06/models"
+  ]
+}
