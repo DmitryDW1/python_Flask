@@ -27,7 +27,7 @@
 
 import uvicorn
 import shop
-from data_base import database
+from Seminar6.homework.app_06.data import database
 from fastapi import FastAPI
 # import hw_app_06.models.data_base as db
 from fastapi.concurrency import asynccontextmanager

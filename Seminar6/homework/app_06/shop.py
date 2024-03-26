@@ -1,6 +1,6 @@
 import datetime
 from fastapi import FastAPI, HTTPException
-from data_base import database as db
+from data import database as db
 from passlib.context import CryptContext
 # from asyncio import run
 from typing import List
